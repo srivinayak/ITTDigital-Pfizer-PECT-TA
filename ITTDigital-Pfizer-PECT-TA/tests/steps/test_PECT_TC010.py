@@ -96,6 +96,7 @@ def teardown():
 
 @pytest.mark.order(5)
 def test_completion():
+    global driver
     try:
         driver.close()
     except Exception as e:
@@ -106,4 +107,4 @@ def test_completion():
     except Exception as e:
         pass
 
-
+    driver = None
