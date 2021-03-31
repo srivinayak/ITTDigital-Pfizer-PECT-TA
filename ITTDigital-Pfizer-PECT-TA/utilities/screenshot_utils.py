@@ -15,6 +15,8 @@ def test_failed_check(driver, scenario_name):
     import time
     import allure
     from allure_commons.types import AttachmentType
+    if(driver == None):
+        return None
     try:
         driver.maximize_window()
         screenshot = "./result/screenshot/"
@@ -29,6 +31,8 @@ def test_failed_check(driver, scenario_name):
 
 
 def take_full_screenshot(driver, scenario_name):
+    if(driver == None):
+        return None
     driver.maximize_window()
     from Screenshot import Screenshot_Clipping
     screen_img_path = "./result/screenshot/"
